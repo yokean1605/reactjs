@@ -1,0 +1,17 @@
+
+table {
+    border: 1px solid #282c34;
+    margin: 0 auto;
+    width: 550px;
+  }
+  
+  tr {
+    background-color: #FF7F50;
+    text-align: left;
+  }
+  
+  th {
+    width: 200px;
+    background-color: #aaaaaa;
+    text-align: center;
+  }

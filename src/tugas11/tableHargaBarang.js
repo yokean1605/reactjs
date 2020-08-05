@@ -1,21 +1,16 @@
 import React from 'react';
-import './../App.css';
+import './tableHarga.css';
 
 
-class DataTableName extends React.Component {
+class ItemBuah extends React.Component {
     render() {
-        return <td>{this.props.nama}</td>;
-    }
-}
-class DataTablePrice extends React.Component {
-    render() {
-        return <td>{this.props.harga}</td>;
-    }
-}
-
-class DataTableWeight extends React.Component {
-    render() {
-        return <td>{this.props.berat}kg</td>;
+        return (
+            <tr>
+                <td>{this.props.item.nama}</td>
+                <td>{this.props.item.harga}</td>
+                <td>{this.props.item.berat / 1000} kg</td>
+            </tr>
+        );
     }
 }
 
@@ -42,13 +37,11 @@ class DataTable extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {dataHargaBuah.map(el => {
+                        {dataHargaBuah.map((el, index) => {
                             return (
-                                <tr>
-                                    <DataTableName nama={el.nama} />
-                                    <DataTablePrice harga={el.harga} />
-                                    <DataTableWeight berat={(el.berat) / 1000} />
-                                </tr>
+                                <>
+                                    < ItemBuah item={el} key={index} />
+                                </>
                             );
                         })}
                     </tbody>
@@ -61,7 +54,7 @@ class DataTable extends React.Component {
 function App() {
     return (
         <div>
-            <DataTable />"
+            <DataTable />
         </div>
     );
 }

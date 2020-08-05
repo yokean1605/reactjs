@@ -1,0 +1,16 @@
+.timer {
+    display: inline-block;
+    width: 550px;
+}
+
+.time {
+    transition: all 0.3s ease;
+}
+
+.timer > .time{
+    float: right;
+}
+
+.timer > .date{
+    float: left;
+}
