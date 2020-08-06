@@ -1,8 +1,8 @@
 
-table {
+table.tableHBarang {
   border: 1px solid #282c34;
   margin: 0 auto;
-  width: 550px;
+  width: 80%;
 }
   
 table.tableHBarang tr {

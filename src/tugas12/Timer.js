@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './tugas12.css';
+import './timer.css';
 
 class BackTimer extends Component {
     constructor(props) {

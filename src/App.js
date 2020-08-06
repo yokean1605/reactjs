@@ -1,9 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-// import TableHargaBarang from './tugas11/tableHargaBarang';
-import Tugas12 from './tugas12/tugas12';
-import Tugas13 from './tugas13/tugas13';
+import Tugas11 from './tugas11/TableHargaBarang';
+import Tugas12 from './tugas12/Timer';
+import Tugas13 from './tugas13/CrudDaftarBuah';
+import Tugas14 from './tugas14/Hooks'
 
 function App() {
   return (
@@ -15,9 +16,10 @@ function App() {
           <h3 style={{ margin: "0px" }}>React JS</h3>
         </div>
         <div style={{ display: "block", width: "70vw" }}>
-          {/* <TableHargaBarang /> */}
-          <Tugas12 start={100} />
-          <Tugas13 />
+          {/* <Tugas11 /> */}
+          {/* <Tugas12 start={100} /> */}
+          {/* <Tugas13 /> */}
+          <Tugas14 />
         </div>
       </div>
     </div>
