@@ -1,5 +1,5 @@
 import React from 'react';
-import './tableHarga.css';
+import './tugas11.css';
 
 
 class ItemBuah extends React.Component {
@@ -28,7 +28,7 @@ class DataTable extends React.Component {
         return (
             <div className="App">
                 <h1>Table Harga Buah</h1>
-                <table className="Table">
+                <table className="tableHBarang">
                     <thead>
                         <tr>
                             <th>Nama</th>
