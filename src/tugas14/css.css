@@ -1,0 +1,19 @@
+table {
+    border: 1px solid #282c34;
+    margin: 0 auto;
+    width: 80%;
+  }
+    
+  table.tableHBarang tr {
+    background-color: #FF7F50;
+  }
+  
+  tr {
+    text-align: left;
+  }
+    
+  table.tableHBarang th {
+    width: 200px;
+    background-color: #aaaaaa;
+    text-align: center;
+  }

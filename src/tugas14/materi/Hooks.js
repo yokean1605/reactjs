@@ -1,8 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const Example = () => {
     // Deklarasi variable state baru yang kita sebut 'count'
     const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        if (count > 10) {
+            // Memperbarui judul dokumen menggunakan API browser
+            document.title = `You clicked ${count} times`;
+        }
+    });
 
     return (
         <div>

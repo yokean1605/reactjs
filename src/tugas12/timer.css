@@ -1,6 +1,12 @@
+.p-timer {
+    position: relative;
+}
 .timer {
     display: inline-block;
-    width: 550px;
+    height: 100%;
+    position: absolute;
+    left: 10px;
+    right: 10px;
 }
 
 .time {

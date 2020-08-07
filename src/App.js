@@ -1,10 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Tugas11 from './tugas11/TableHargaBarang';
+// import Tugas11 from './tugas11/TableHargaBarang';
 import Tugas12 from './tugas12/Timer';
-import Tugas13 from './tugas13/CrudDaftarBuah';
-import Tugas14 from './tugas14/Hooks'
+// import Tugas13 from './tugas13/CrudDaftarBuah';
+import Tugas14 from './tugas14/DaftarBuah'
 
 function App() {
   return (
@@ -17,9 +17,9 @@ function App() {
         </div>
         <div style={{ display: "block", width: "70vw" }}>
           {/* <Tugas11 /> */}
-          {/* <Tugas12 start={100} /> */}
           {/* <Tugas13 /> */}
           <Tugas14 />
+          <Tugas12 start={100} />
         </div>
       </div>
     </div>

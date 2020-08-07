@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './css.css'
 
 class CrudDaftarBuah extends Component {
 
