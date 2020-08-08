@@ -3,6 +3,9 @@
 # dependencies
 /node_modules
 /.pnp
+/tugas13/materi
+/tugas14/materi
+/tugas15/materi
 .pnp.js
 
 # testing

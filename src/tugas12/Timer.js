@@ -40,16 +40,14 @@ class BackTimer extends Component {
             <>
                 {
                     this.state.time >= 0 && (
-                        <div className="p-timer">
-                            <div className="timer">
-                                <h3 style={{ float: "left" }}>
-                                    Sekarang jam - {this.state.date.toLocaleTimeString()}.
+                        <>
+                            <h3 className="date">
+                                Sekarang jam - {this.state.date.toLocaleTimeString()}.
                             </h3>
-                                <h3 style={{ float: "right" }}>
-                                    hitung mundur: {this.state.time}
-                                </h3>
-                            </div>
-                        </div>
+                            <h3 className="time">
+                                hitung mundur: {this.state.time}
+                            </h3>
+                        </>
                     )
                 }
             </>

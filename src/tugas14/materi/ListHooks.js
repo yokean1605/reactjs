@@ -4,13 +4,13 @@ import './../css.css'
 
 const ListHooks = () => {
 
-    const [pesertaLomba, setPesertaLomba] = useState(['Budi', 'Susi', 'Lala', 'Agung'])
+    const [pesertaLomba, setPesertaLomba] = useState([])
     const [inputName, setInputName] = useState("")
     const [indexOfForm, setIndexOfForm] = useState(-1)
 
     useEffect(() => {
         axios.get(`http://backendexample.sanbercloud.com/api/contestants`).then(res => {
-            console.log(res);
+            console.log(res.data);
         })
     })
 

@@ -1,10 +1,15 @@
 import React from 'react';
+import { BrowserRouter as Router } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
+import Routes from './Routes';
 // import Tugas11 from './tugas11/TableHargaBarang';
-import Tugas12 from './tugas12/Timer';
+// import Tugas12 from './tugas12/Timer';
 // import Tugas13 from './tugas13/CrudDaftarBuah';
-import Tugas14 from './tugas14/DaftarBuah'
+// import Tugas14 from './tugas14/materi/ListHooks'
+// import Tugas15 from './tugas15/materi/rounter'
+
+
 
 function App() {
   return (
@@ -15,11 +20,10 @@ function App() {
           <h3 style={{ margin: "0px" }}>Sanbercode</h3>
           <h3 style={{ margin: "0px" }}>React JS</h3>
         </div>
-        <div style={{ display: "block", width: "70vw" }}>
-          {/* <Tugas11 /> */}
-          {/* <Tugas13 /> */}
-          <Tugas14 />
-          <Tugas12 start={100} />
+        <div style={{ display: "block", width: "70vw", position: "relative" }}>
+          <Router>
+            <Routes />
+          </Router>
         </div>
       </div>
     </div>
