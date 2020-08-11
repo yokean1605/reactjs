@@ -1,7 +1,7 @@
-import React from 'react'
-import { BuahProvider } from './BuahContext'
-import BuahList from './BuahList'
-import BuahForm from './BuahForm'
+import React from "react"
+import { BuahProvider } from "./context"
+import BuahList from "./BuahList"
+import BuahForm from "./BuahForm"
 
 const Buah = () => {
     return (
@@ -12,4 +12,4 @@ const Buah = () => {
     )
 }
 
-export default Buah
+export default Buah;

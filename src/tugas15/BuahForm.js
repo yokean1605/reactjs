@@ -1,79 +1,74 @@
-import React, { useContext, useEffect } from "react"
-import { DataBuahContext } from "./DataBuahContext"
+import React, { useContext } from "react"
+import { BuahContext } from "./context"
 import axios from "axios"
 
-const DataBuahForm = () => {
-    const [dataHargaBuah, setDataHargaBuah, input, setInput, selectedId, setSelectedId, statusForm, setStatusForm] = useContext(DataBuahContext)
-
-    useEffect(() => {
-        if (dataHargaBuah === null) {
-            axios.get(`http://backendexample.sanbercloud.com/api/fruits`)
-                .then(res => {
-                    setDataHargaBuah(res.data.map(el => { return { id: el.id, name: el.name, price: el.price, weight: el.weight } }))
-                })
-        }
-    }, [dataHargaBuah])
+const BuahForm = () => {
+    const [dataBuah, setDataBuah, idBuah, setIdBuah, input, setInput, status, setStatus] = useContext(BuahContext)
 
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        let name = input.name
-        let price = input.price
-        let weight = input.weight
+        console.log('masuk')
+        console.log(status)
 
-        if (name.replace(/\s/g, '') !== "" && weight.toString().replace(/\s/g, '') !== "" && price.toString().replace(/\s/g, '') !== "") {
-            if (statusForm === "create") {
+        if (input['name'].replace(/\s/g, '') !== "" && input['price'].toString().replace(/\s/g, '') !== "" && input['weight'].toString().replace(/\s/g, '') !== "") {
+            if (status === "create") {
                 axios.post(`http://backendexample.sanbercloud.com/api/fruits`, input)
                     .then(res => {
-                        setDataHargaBuah([...dataHargaBuah, { id: res.data.id, name: input.name, price: input.price, weight: input.weight }])
+                        console.log(res.data)
+                        setDataBuah([...dataBuah, { name: res.data.name, price: res.data.price, weight: res.data.weight }])
                     })
-            } else if (statusForm === "edit") {
-                axios.put(`http://backendexample.sanbercloud.com/api/fruits/${selectedId}`, { ...input })
+            } else if (status === "edit") {
+                axios.put(`http://backendexample.sanbercloud.com/api/fruits/${idBuah}`, input)
                     .then(res => {
-                        let dataBuah = dataHargaBuah.find(el => el.id === selectedId)
-                        dataBuah.name = input.name
-                        dataBuah.price = input.price
-                        dataBuah.weight = input.weight
-                        setDataHargaBuah([...dataHargaBuah])
+                        let buah = dataBuah.find(el => el.id === idBuah)
+                        buah['name'] = input.name
+                        buah['price'] = input.price
+                        buah['weight'] = input.weight
+                        setDataBuah([...dataBuah])
                     })
             }
 
-            setStatusForm("create")
-            setSelectedId(0)
+            setIdBuah(0)
             setInput({
                 name: "",
                 price: "",
                 weight: ""
             })
+            setStatus("create")
         }
-
     }
 
     const handleChange = (event) => {
-        let newHargaBuah = { ...input }
-        newHargaBuah[event.target.name] = event.target.value
-        setInput(newHargaBuah)
+        const { name, value } = event.target;
+        setInput(prevState => ({
+            ...prevState,
+            [name]: value
+        }))
     }
+
 
     return (
         <>
-            <h1 className="content1">Submit Data Buah</h1>
-            <form className="content1" onSubmit={handleSubmit}>
-                <label>Nama Buah : </label>
-                <input type="text" name='name' value={input.name} onChange={handleChange} />
-                <br /><br />
-                <label>Harga Buah : </label>
-                <input type="text" name='price' value={input.price} onChange={handleChange} />
-                <br /><br />
-                <label>Berat Buah : </label>
-                <input type="number" name='weight' value={input.weight} onChange={handleChange} />
-                <br /><br />
-                <button><a>submit</a></button>
-                <br /><br /><br />
+            <h1 style={{ textAlign: "center", marginTop: '25px', marginBottom: '25px' }}>Form Buah</h1>
+            <form onSubmit={handleSubmit} style={{ width: '25%', marginLeft: 'auto', marginRight: 'auto' }}>
+                <div class="form-group">
+                    <label> Nama Buah : </label>
+                    <input class="form-control" type="text" name='name' value={input.name} onChange={handleChange} placeholder="name" />
+                </div>
+                <div className="form-group">
+                    <label>Harga Buah : </label>
+                    <input class="form-control" type="text" name='price' value={input.price} onChange={handleChange} placeholder="price" />
+                </div>
+                <div className="form-group">
+                    <label>Berat Buah : </label>
+                    <input class="form-control" type="text" name='weight' value={input.weight} onChange={handleChange} placeholder="in gram" />
+                </div>
+                <br />
+                <button type="submit" class="btn btn-primary"> submit</button>
             </form>
         </>
     )
-
 }
 
-export default DataBuahForm
+export default BuahForm;
